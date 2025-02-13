@@ -34,7 +34,7 @@ async function fetchBlogDetails() {
          canonical.setAttribute("rel", "canonical");
          document.head.appendChild(canonical);
        }
-       canonical.setAttribute("href", `https://www.brandbik.com/blog-detail?slug=${slug}`);
+       canonical.setAttribute("href", `https://www.teamae.in/blog-detail.html?slug=${slug}`);
      }  
      else {
       console.error("Error fetching blog:", response.statusText);
@@ -45,3 +45,7 @@ async function fetchBlogDetails() {
     document.body.innerHTML = "<p>Failed to load the blog post. Please try again later.</p>";
   }
 }
+
+
+// Initialize on DOM load
+document.addEventListener("DOMContentLoaded", fetchBlogDetails);
